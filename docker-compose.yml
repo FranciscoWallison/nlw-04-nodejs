@@ -1,0 +1,14 @@
+version: '3' # vs mais atual
+
+services:             
+
+  app:
+    build: .
+    container_name: apiNode
+    restart: always
+    tty: true
+    ports:
+      - "3333:3333"
+    volumes:
+        - .:/src/app
+    working_dir: /src/app
