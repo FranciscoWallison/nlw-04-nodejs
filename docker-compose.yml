@@ -16,7 +16,6 @@ services:
     volumes:       
       - ./nodejs:/src/app
     working_dir: /src/app
-    # CONFIGURAÇÕES MYSQL
     environment:
       - CONNECTION=mysql
       - TYPEORM_LOGGING=true
