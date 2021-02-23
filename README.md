@@ -5,12 +5,14 @@
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
-#### 2 Para star selecionando o [DRIVE](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
+#### 2 Para star selecionando os [DRIVES](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
 #### 3 O comando ["yarn dev-mr"](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) desse projeto lhe ajudará a startar o projeto já com as migrações.
 #### 4 Para estár adicionando UUID no mysql vejá documentação, vejá exemplo utilizando nesse projeto [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/src/database/migrations/1614094730404-CreateUsers.ts#L15);
 
 _______
-
+## Comandos básicos Docker e DOCKER-COMPOSE
+#### Executando docker-compose 
+- docker-compose -f "docker-compose.yml" down
 ## Comandos básicos MIGRATIONS
 #### Executando migrations
  - yarn typeorm migration:run
