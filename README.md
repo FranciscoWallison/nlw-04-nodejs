@@ -5,8 +5,9 @@
 
 #### OBS: 
     - lembrar de abrir o bash e instalar o "npm install".
-    - O comando "yarn dev-mr" desse projeto lhe ajudará a startar o projeto já com as migrações.
-    - Para estár adicionando UUID no mysql vejá documentação, exemplo utilizando;
+    - Para star selecionando o [DRIVE](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
+    - O comando ["yarn dev-mr"](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) desse projeto lhe ajudará a startar o projeto já com as migrações.
+    - Para estár adicionando UUID no mysql vejá documentação, vejá exemplo utilizando nesse projeto [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/src/database/migrations/1614094730404-CreateUsers.ts#L15);
 
 ## Comandos básicos MIGRATIONS
 #### Executando migrations
