@@ -1,8 +1,5 @@
 # [NLW#4] Start Project Docker
 
-## Command Docker
-`docker-compose -f "docker-compose.yml" up -d --build`
-
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
 #### 2 Para star selecionando os [DRIVES](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
