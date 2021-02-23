@@ -1,14 +1,65 @@
 version: '3' # vs mais atual
-
+networks:
+  nlw-app-network:
+    driver: bridge
 services:             
 
   app:
-    build: .
+    build: nodejs
     container_name: apiNode
     restart: always
     tty: true
+    networks:
+      - nlw-app-network
     ports:
       - "3333:3333"
-    volumes:
-        - .:/src/app
+    volumes:       
+      - ./nodejs:/src/app
     working_dir: /src/app
+    # CONFIGURAÇÕES MYSQL
+    environment:
+      - CONNECTION=mysql
+      - TYPEORM_LOGGING=true
+      - TYPEORM_ENTITIES=./src/models/*.ts
+      - TYPEORM_MIGRATIONS=./src/database/migrations/**.ts
+      - TYPEORM_MIGRATIONS_DIR=./src/database/migrations
+      - TYPEORM_ENTITIES_DIR=./src/models/**.ts
+    depends_on: 
+      - db_mysql
+      - db_pg
+
+  # CONFIGURAÇÕES MYSQL
+  db_mysql:
+    container_name: db_mysql
+    image: mysql:latest
+    restart: always
+    tty: true
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./dbs/mysql/dbdata:/var/lib/mysql
+      - ./dbs/init/nlw.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      - MYSQL_DATABASE=nlw
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+    networks:
+      - nlw-app-network
+
+  # CONFIGURAÇÕES POSTGRES
+  db_pg:
+    container_name: db_pg
+    image: postgres:9.6
+    volumes:
+      # Volume dos dados
+      - ./dbs/pg/data:/var/lib/postgresql/data
+      - ./dbs/init/nlw.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+    - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=database_nlw
+      - POSTGRES_PASSWORD=postgres
+      - PGPORT=5432
+    networks:
+      - nlw-app-network
