@@ -9,6 +9,8 @@
 #### 3 O comando ["yarn dev-mr"](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) desse projeto lhe ajudará a startar o projeto já com as migrações.
 #### 4 Para estár adicionando UUID no mysql vejá documentação, vejá exemplo utilizando nesse projeto [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/src/database/migrations/1614094730404-CreateUsers.ts#L15);
 
+_______
+
 ## Comandos básicos MIGRATIONS
 #### Executando migrations
  - yarn typeorm migration:run
@@ -16,8 +18,6 @@
  - yarn typeorm migration:revert
 #### Criando migrations
  - yarn typeorm migration:create -n CreateUsers
-
-_______
 
 ## Comandos básicos SQLITE
 #### Install sqlite3 LINUX
