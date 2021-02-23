@@ -13,7 +13,7 @@ export class CreateUsers1614047185305 implements MigrationInterface {
             name: 'id',
             isPrimary: true,
             type: process.env.CONNECTION_DRIVE === 'mysql' ? "binary" : 'uuid',       
-            default:  process.env.CONNECTION_DRIVE === 'mysql' ? `(UUID_TO_BIN(UUID(), TRUE))` : ``,
+            default:  process.env.CONNECTION_DRIVE === 'mysql' ? `(UUID_TO_BIN(UUID(), TRUE))` : "NULL",
           },
           {
             name: 'name',

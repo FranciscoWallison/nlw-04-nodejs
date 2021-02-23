@@ -17,8 +17,9 @@ services:
       - ./nodejs:/src/app
     working_dir: /src/app
     environment:
-      # ESCOLHA O SEU DRIVE AQUI sqlite, mysql E postgres
-      - CONNECTION_DRIVE=mysql
+      # ESCOLHA O SEU DRIVE ENTRE sqlite, mysql E postgres
+      - CONNECTION_DRIVE=sqlite
+      # CONFIGURAÇÕES MIGRATIONS
       - TYPEORM_LOGGING=true
       - TYPEORM_ENTITIES=./src/models/*.ts
       - TYPEORM_MIGRATIONS=./src/database/migrations/**.ts
@@ -54,7 +55,6 @@ services:
     volumes:
       # Volume dos dados
       - ./dbs/pg/data:/var/lib/postgresql/data
-      - ./dbs/init/nlw_pg.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
     - 5432:5432
     environment:

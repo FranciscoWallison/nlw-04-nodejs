@@ -7,10 +7,15 @@ dotenv.config();
 if(process.env.CONNECTION_DRIVE === 'sqlite' ){
     module.exports = {
         "type": "sqlite",
-        "database": "./src/database/database.sqlite",
+        "database": "./src/database/sqlite/database.sqlite",
+        "migrations": [process.env.TYPEORM_MIGRATIONS],
         "cli" : {
             "migrationsDir": process.env.TYPEORM_MIGRATIONS_DIR,
-        }
+        },
+        entities: [
+            process.env.TYPEORM_ENTITIES_DIR, 
+        ],
+        "synchronize": true
      }
 }else if ( process.env.CONNECTION_DRIVE === 'mysql' ){
     module.exports = {
