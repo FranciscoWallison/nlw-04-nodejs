@@ -1,4 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 export class CreateUsers1614047185305 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -9,10 +12,8 @@ export class CreateUsers1614047185305 implements MigrationInterface {
           {
             name: 'id',
             isPrimary: true,
-            //type: "binary",
-            type: 'uuid',            
-            //default: `(UUID_TO_BIN(UUID(), TRUE))`,
-            default: ``,
+            type: process.env.CONNECTION_DRIVE === 'mysql' ? "binary" : 'uuid',       
+            default:  process.env.CONNECTION_DRIVE === 'mysql' ? `(UUID_TO_BIN(UUID(), TRUE))` : ``,
           },
           {
             name: 'name',

@@ -4,7 +4,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-if(process.env.CONNECTION === 'sqlite' ){
+if(process.env.CONNECTION_DRIVE === 'sqlite' ){
     module.exports = {
         "type": "sqlite",
         "database": "./src/database/database.sqlite",
@@ -12,7 +12,7 @@ if(process.env.CONNECTION === 'sqlite' ){
             "migrationsDir": process.env.TYPEORM_MIGRATIONS_DIR,
         }
      }
-}else if ( process.env.CONNECTION === 'mysql' ){
+}else if ( process.env.CONNECTION_DRIVE === 'mysql' ){
     module.exports = {
         "type": "mysql",
         "host": "db_mysql",
@@ -29,7 +29,7 @@ if(process.env.CONNECTION === 'sqlite' ){
         ],
         "synchronize": true
      }
-}else if ( process.env.CONNECTION === 'postgres' ){
+}else if ( process.env.CONNECTION_DRIVE === 'postgres' ){
     module.exports = {
         "type": "postgres",
         "host": "db_pg",

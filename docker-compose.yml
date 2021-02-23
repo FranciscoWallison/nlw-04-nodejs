@@ -17,7 +17,8 @@ services:
       - ./nodejs:/src/app
     working_dir: /src/app
     environment:
-      - CONNECTION=mysql
+      # ESCOLHA O SEU DRIVE AQUI sqlite, mysql E postgres
+      - CONNECTION_DRIVE=mysql
       - TYPEORM_LOGGING=true
       - TYPEORM_ENTITIES=./src/models/*.ts
       - TYPEORM_MIGRATIONS=./src/database/migrations/**.ts
@@ -31,13 +32,14 @@ services:
   db_mysql:
     container_name: db_mysql
     image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
     tty: true
     ports:
       - "3306:3306"
     volumes:
       - ./dbs/mysql/dbdata:/var/lib/mysql
-      - ./dbs/init/nlw.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./dbs/init/nlw_mysql.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
       - MYSQL_DATABASE=nlw
       - MYSQL_ROOT_PASSWORD=root
@@ -52,7 +54,7 @@ services:
     volumes:
       # Volume dos dados
       - ./dbs/pg/data:/var/lib/postgresql/data
-      - ./dbs/init/nlw.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./dbs/init/nlw_pg.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
     - 5432:5432
     environment:
