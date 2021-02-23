@@ -21,7 +21,7 @@ _______
 #### Acessando banco 
 -  sqlite3 database.sql
 #### Lista todos as tabelas
-.tables
+- .tables
 
 ## Comandos básicos POSTGRES
 -  psql -U postgres
