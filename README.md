@@ -4,7 +4,8 @@
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
 #### 2 Para star selecionando os [DRIVES](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
 #### 3 O comando ["yarn dev-mr"](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) desse projeto lhe ajudará a startar o projeto já com as migrações.
-#### 4 Para estár adicionando UUID no mysql vejá documentação, vejá exemplo utilizando nesse projeto [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/src/database/migrations/1614094730404-CreateUsers.ts#L15);
+#### 4 Para estár adicionando UUID no mysql vejá documentação, vejá exemplo utilizando nesse projeto [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/src/database/migrations/1614094730404-CreateUsers.ts#L15).
+#### Referencia utilizada para criar webhook com jenkins e github [aqui](https://medium.com/@naistangz/building-a-ci-cd-pipeline-for-a-node-js-app-with-docker-and-jenkins-ee6db6e70d25).
 
 _______
 ## Comandos básicos Docker e DOCKER-COMPOSE
@@ -17,7 +18,6 @@ _______
  - yarn typeorm migration:revert
 #### Criando migrations
  - yarn typeorm migration:create -n CreateUsers
-
 ## Comandos básicos SQLITE
 #### Install sqlite3 LINUX
 - sudo apt install sqlite3
@@ -43,3 +43,8 @@ _______
 - USE database_nlw;
 #### Lista todos as tabelas
 - show tables;
+
+# Testing continuous integration
+## Comandos básicos jenkins
+#### Primeiro acesso
+- cat /var/jenkins_home/secrets/initialAdminPassword

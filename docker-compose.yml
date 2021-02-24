@@ -28,6 +28,15 @@ services:
     depends_on: 
       - db_mysql
       - db_pg
+  
+  # CONFIGURAÇÕES CI
+  jenkins:
+    image: chicowall/jenkins
+    # build: jenkins
+    container_name: jenkins
+    ports:
+      - 8080:8080
+      - 50000:50000
 
   # CONFIGURAÇÕES MYSQL
   db_mysql:
@@ -54,6 +63,7 @@ services:
     image: postgres:9.6
     volumes:
       # Volume dos dados
+      - ./dbs/init/nlw_pg.sql:/docker-entrypoint-initdb.d/init.sql
       - ./dbs/pg/data:/var/lib/postgresql/data
     ports:
     - 5432:5432
