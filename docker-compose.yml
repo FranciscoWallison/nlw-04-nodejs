@@ -42,7 +42,7 @@ services:
       - ./dbs/mysql/dbdata:/var/lib/mysql
       - ./dbs/init/nlw_mysql.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
-      - MYSQL_DATABASE=nlw
+      - MYSQL_DATABASE=database_nlw
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=root
     networks:
