@@ -39,7 +39,7 @@ _______
 - mysql -uroot -proot
 #### lista todos os bancos
 - show database;
-#### Selecionar o banco 
+#### Selecionar o banco  
 - USE database_nlw;
 #### Lista todos as tabelas
 - show tables;
