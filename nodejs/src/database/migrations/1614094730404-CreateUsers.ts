@@ -1,6 +1,4 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
-const dotenv = require('dotenv');
-dotenv.config();
 
 
 export class CreateUsers1614047185305 implements MigrationInterface {

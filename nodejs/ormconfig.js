@@ -1,8 +1,6 @@
 /**
  * 
  */
-const dotenv = require('dotenv');
-dotenv.config();
 
 if(process.env.CONNECTION_DRIVE === 'sqlite' ){
     module.exports = {
