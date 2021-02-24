@@ -1,40 +1,101 @@
 pipeline {
     environment {
-    registry = "chicowall/nlw-04-nodejs"
-    registryCredential = 'dockerhub'
-    dockerImage = ''
+        REGISTRY = "chicowall"
+        registryCredential = 'dockerhubcredentialse'
+        dockerImage = ''
     }
+
 
     agent any
     stages {
-            stage('Cloning our Git') {
+            stage('[GitClone] Preparando a bagagem') {
                 steps {
-                git 'git@github.com:chicowall/nlw-04-nodejs.git'
+                    git url: 'https://github.com/FranciscoWallison/nlw-04-nodejs.git'
                 }
             }
 
-            stage('Building Docker Image') {
+            stage('[BuildDockerCompose] Revisando os motores') {
+                steps {
+                    sh (
+                        script: 'docker-compose up --build -d',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[NpmInstall] Embarcando') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs npm install',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[RunMigrations] Aquecendo os motores') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs yarn typeorm migration:run',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            // stage('[YarnTest] Contagem Regreciva') {
+            //     steps {
+            //         sh (
+            //             script: 'docker exec -it nlw-04-nodejs yarn typeorm migration:run',
+            //             returnStatus: true
+            //         )
+            //     }
+            // }
+
+            stage('[BuldDockerImage] Prepando para decolar') {
                 steps {
                     script {
-                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                        dockerImage = "${env.REGISTRY}/nlw-04-nodejs:${env.BUILD_ID}"
                     }
                 }
             }
 
-            stage('Deploying Docker Image to Dockerhub') {
+            stage('[DeployDockerhub] Chegando ao fim do destino.') {
                 steps {
                     script {
                         docker.withRegistry('', registryCredential) {
-                        dockerImage.push()
+                          sh (
+                        script: "docker container commit nlw-04-nodejs ${dockerImage}",
+                        returnStatus: true
+                    )
+                     sh (
+                        script: "docker push ${dockerImage}",
+                        returnStatus: true
+                    )
                         }
                     }
                 }
+        
             }
 
-            stage('Cleaning Up') {
-                steps{
-                  sh "docker rmi --force $registry:$BUILD_NUMBER"
+            stage('É um pequeno passo para [um] homem, ...') {
+                steps {
+                    sh (
+                        script: 'docker rm $(docker ps -a -q)  -f',
+                        returnStatus: true
+                    )
+                
                 }
             }
+
+
+            stage(' um salto gigante para a humanidade.') {
+                steps {
+                
+                    sh (
+                        script: 'docker rmi -f $(docker images -q)',
+                        returnStatus: true
+                    )
+                }
+            }
+
         }
     }

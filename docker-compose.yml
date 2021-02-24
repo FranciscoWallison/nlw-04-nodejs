@@ -6,7 +6,7 @@ services:
 
   app:
     build: nodejs
-    container_name: apiNode
+    container_name: nlw-04-nodejs
     restart: always
     tty: true
     networks:

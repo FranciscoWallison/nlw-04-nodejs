@@ -11,6 +11,7 @@ _______
 ## Comandos básicos Docker e DOCKER-COMPOSE
 #### Executando docker-compose 
 - docker-compose -f "docker-compose.yml" down
+- docker container exec -u 0 -it 14802ce72cc4 bash
 ## Comandos básicos MIGRATIONS
 #### Executando migrations
  - yarn typeorm migration:run
