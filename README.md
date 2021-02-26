@@ -34,10 +34,10 @@
 
 * [📋 Sobre](#-sobre-o-projeto)
 * [🚀 Milhas Extras:](#-milhas-extras)
-* [:cyclone: CI/CD](#-cicd)
-*  -[:artificial_satellite: Pipeline Jenkis](#-pipeline)
-*  -[:white_check_mark: Testing sqlite, mysql e postgres](#-testing-sqlite-mysql-e-postgres)
-*  -[:shopping_cart: Deliveri](#-repo)
+* [:cyclone: CI/CD](#cicd)
+*  -[:artificial_satellite: Pipeline Jenkis](#pipeline)
+*  -[:white_check_mark: Testing sqlite, mysql e postgres](#testing-sqlite-mysql-e-postgres)
+*  -[:shopping_cart: Deliveri](#-epo)
 * [🦸 Autor](#🦸-Autor)
 * [📝 Licença](#📝-Licença)
   
