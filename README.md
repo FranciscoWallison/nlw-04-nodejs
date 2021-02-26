@@ -33,8 +33,7 @@
 
 
 * [📋 Sobre](#-sobre-o-projeto)
-* [🚀 Milha Extra:](#-milha-extra)
-* [🏋️‍♀️ Como contribuir para o projeto](#🏋️‍♀️-Como-contribuir-para-o-projeto)
+* [🚀 Milha Extra:](#-milhas-extras)
 * [🦸 Autor](#🦸-Autor)
 * [📝 Licença](#📝-Licença)
   
