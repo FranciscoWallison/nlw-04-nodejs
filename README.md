@@ -32,7 +32,7 @@
   ## 📕 Indice
 
 
-* [📋 Sobre](##Sobre-o-projeto)
+* [📋 Sobre](#-sobre-o-projeto)
 * [🖥 Tecnologias:](#🖥-Tecnologias)
 * [🏋️‍♀️ Como contribuir para o projeto](#🏋️‍♀️-Como-contribuir-para-o-projeto)
 * [🦸 Autor](#🦸-Autor)
