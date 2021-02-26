@@ -46,7 +46,20 @@ O <strong>NPS-API</strong> é uma API Restful para Net Promoter Score.
 Aplicação web construída na trilha <strong>NodeJS</strong> da <strong>Next Level Week</strong> distribuída pela [Rocketseat](https://rocketseat.com.br/).
 
 
-## 🚀 Milha Extra
+## 🚀 Milhas Extras
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+- [Typescript](https://www.typescriptlang.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [NPM](https://www.npmjs.com/)
+- [Typeorm](https://typeorm.io/)
+- [Jestjs](https://jestjs.io/)
+- [Sqlite](https://www.sqlite.org/)
+- [MySql](https://www.mysql.com/)
+- [Postgres](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/)
+- [DockerHub](https://hub.docker.com/)
+- [Jenkins](https://www.jenkins.io/)
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
