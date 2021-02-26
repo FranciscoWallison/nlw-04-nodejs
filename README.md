@@ -33,7 +33,8 @@
 
 
 * [📋 Sobre](#-sobre-o-projeto)
-* [🚀 Milha Extra:](#-milhas-extras)
+* [🚀 Milhas Extras:](#-milhas-extras)
+* [CI/CD]
 * [🦸 Autor](#🦸-Autor)
 * [📝 Licença](#📝-Licença)
   
@@ -59,6 +60,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Docker](https://www.docker.com/)
 - [DockerHub](https://hub.docker.com/)
 - [Jenkins](https://www.jenkins.io/)
+
+## CI/CD
+#### Pipeline
+![jenkis](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/jenkis.png)
+#### Testing sqlite, mysql e postgres
+![sqlite](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/test_sqlit.png) ![mysql](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/test_mysql.png) ![jenkis](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/test_postgres.png)
+### Repo
+[Link DockerHub](https://hub.docker.com/repository/docker/chicowall/nlw-04-nodejs/)
+
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
