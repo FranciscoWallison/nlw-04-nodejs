@@ -71,7 +71,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ![sqlite](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/test_sqlit.png) ![mysql](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/test_mysql.png) ![jenkis](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/test_postgres.png)
 ### Repo
 [Link DockerHub](https://hub.docker.com/repository/docker/chicowall/nlw-04-nodejs/)
-
+![deliveri](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/ltimoDelivere.png) 
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
