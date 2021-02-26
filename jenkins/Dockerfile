@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.263.4-lts-jdk11
+FROM jenkins/jenkins:lts
 USER root
 RUN apt-get update && apt-get install -y apt-transport-https \
        ca-certificates curl gnupg2 \
@@ -11,8 +11,5 @@ RUN add-apt-repository \
 RUN apt-get update && apt-get install -y docker-ce-cli
 RUN curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
-RUN git config --global --unset credential.helper
-RUN git config --system --unset credential.helper
-USER jenkins
 RUN jenkins-plugin-cli --plugins blueocean:1.24.4
 RUN jenkins-plugin-cli --plugins nodejs:1.3.11

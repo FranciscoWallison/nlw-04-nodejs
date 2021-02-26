@@ -17,13 +17,22 @@ pipeline {
             stage('[BuildDockerCompose] Revisando os motores') {
                 steps {
                     sh (
-                        script: 'docker-compose up --build -d',
+                        script: 'docker-compose -f "docker-compose.yml" down',
                         returnStatus: true
                     )
                 }
             }
 
-            stage('[NpmInstall] Embarcando') {
+            stage('[BuildDockerCompose] Embarcando') {
+                steps {
+                    sh (
+                        script: "docker-compose up -d",
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[NpmInstall] Apertando os cintos') {
                 steps {
                     sh (
                         script: 'docker exec -it nlw-04-nodejs npm install',
@@ -32,7 +41,7 @@ pipeline {
                 }
             }
 
-            stage('[RunMigrations] Aquecendo os motores') {
+            stage('[RunMigrations] Ligando os motores') {
                 steps {
                     sh (
                         script: 'docker exec -it nlw-04-nodejs yarn typeorm migration:run',
@@ -41,16 +50,16 @@ pipeline {
                 }
             }
 
-            // stage('[YarnTest] Contagem Regreciva') {
-            //     steps {
-            //         sh (
-            //             script: 'docker exec -it nlw-04-nodejs yarn typeorm migration:run',
-            //             returnStatus: true
-            //         )
-            //     }
-            // }
+            stage('[YarnTest] Contagem Regreciva') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs yarn test',
+                        returnStatus: true
+                    )
+                }
+            }
 
-            stage('[BuldDockerImage] Prepando para decolar') {
+            stage('[CreatImage] 5...') {
                 steps {
                     script {
                         dockerImage = "${env.REGISTRY}/nlw-04-nodejs:${env.BUILD_ID}"
@@ -58,40 +67,34 @@ pipeline {
                 }
             }
 
-            stage('[DeployDockerhub] Chegando ao fim do destino.') {
+            stage('[BuldDockerImage] 4...') {
                 steps {
-                    script {
-                        docker.withRegistry('', registryCredential) {
-                          sh (
+                    sh (
                         script: "docker container commit nlw-04-nodejs ${dockerImage}",
                         returnStatus: true
                     )
-                     sh (
-                        script: "docker push ${dockerImage}",
-                        returnStatus: true
-                    )
+                }
+            }
+
+            stage('[DeployDockerhub] 3...') {
+                steps {
+                    script {
+                        docker.withRegistry('', registryCredential) {
+                            sh /* WRONG! */ """
+                            set +x
+                            docker push ${dockerImage}
+                            """
                         }
                     }
                 }
         
             }
 
-            stage('É um pequeno passo para [um] homem, ...') {
-                steps {
-                    sh (
-                        script: 'docker rm $(docker ps -a -q)  -f',
-                        returnStatus: true
-                    )
-                
-                }
-            }
-
-
-            stage(' um salto gigante para a humanidade.') {
+            stage(' 2...') {
                 steps {
                 
                     sh (
-                        script: 'docker rmi -f $(docker images -q)',
+                        script: "docker rmi -f ${dockerImage}",
                         returnStatus: true
                     )
                 }

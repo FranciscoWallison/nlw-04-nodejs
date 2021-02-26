@@ -39,7 +39,7 @@ _______
 ## Comandos básicos MYSQL
 - mysql -uroot -proot
 #### lista todos os bancos
-- show database;
+- show databases;
 #### Selecionar o banco 
 - USE database_nlw;
 #### Lista todos as tabelas
