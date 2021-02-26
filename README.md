@@ -33,7 +33,7 @@
 
 
 * [📋 Sobre](#-sobre-o-projeto)
-* [🖥 Tecnologias:](#🖥-Tecnologias)
+* [🖥 Milha Extra:](#🖥-Milha-Extr)
 * [🏋️‍♀️ Como contribuir para o projeto](#🏋️‍♀️-Como-contribuir-para-o-projeto)
 * [🦸 Autor](#🦸-Autor)
 * [📝 Licença](#📝-Licença)
@@ -45,7 +45,9 @@ O <strong>NPS-API</strong> é uma API Restful para Net Promoter Score.
 
 Aplicação web construída na trilha <strong>NodeJS</strong> da <strong>Next Level Week</strong> distribuída pela [Rocketseat](https://rocketseat.com.br/).
 
-  
+
+## 🚀 Milha Extra
+
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
 #### 2 Para estar selecionando os [DRIVES](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
