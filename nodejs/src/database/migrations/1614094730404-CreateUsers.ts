@@ -1,6 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-
 export class CreateUsers1614047185305 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
@@ -10,8 +9,9 @@ export class CreateUsers1614047185305 implements MigrationInterface {
           {
             name: 'id',
             isPrimary: true,
-            type: process.env.CONNECTION_DRIVE === 'mysql' ? "varchar" : 'uuid',
-            default:  process.env.CONNECTION_DRIVE === 'mysql' ? `(UUID_TO_BIN(UUID(), TRUE))` : "NULL",
+            type: "varchar",    
+            generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'name',

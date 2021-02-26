@@ -5,7 +5,7 @@ import { app } from '../app';
 import {connection}  from  '../config/db';
 
 describe('Users', () => {
-  beforeAll(async () => {
+  beforeAll(async () => {    
     const cn = await connection;
     await cn.dropDatabase();       
     await cn.runMigrations({
