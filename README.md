@@ -1,11 +1,11 @@
-# [NLW#4] Start Project Docker, Dokcer-Compose, Jenkis, NodeJs, Sqlit, Mysql e Porstgres
+# [NLW#4] Start Project Docker, Dokcer-Compose, Jenkis, DockerHub, NodeJs, Sqlit, Mysql e Porstgres
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
 #### 2 Para estar selecionando os [DRIVES](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
-#### 3 O comando [yarn dev-mr](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) desse projeto lhe ajudará a startar o projeto já com as migrações.
-#### 4 Para estár adicionando UUID no mysql vejá exemplo utilizando nesse projeto [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/nodejs/src/database/migrations/1614094730404-CreateUsers.ts#L14).
-#### 5 Referencia utilizada para criar webhook com jenkins e github [aqui](https://medium.com/@naistangz/building-a-ci-cd-pipeline-for-a-node-js-app-with-docker-and-jenkins-ee6db6e70d25).
+#### 3 O comando [yarn dev-mr](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) ajudará a startar o projeto com as migrações.
+#### 4 O comando ```typeorm-mc <DescriptionMigration>``` ajudará a criar a migração na database selecionada.
+#### 5 Referencia utilizada para criar webhook com jenkins, github e dockerhub [aqui](https://medium.com/@naistangz/building-a-ci-cd-pipeline-for-a-node-js-app-with-docker-and-jenkins-ee6db6e70d25).
 #### 6 Possiveis erros e suas soluções [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs#table-database_nlw_testsurveys-doesnt-exist).
 
 _______

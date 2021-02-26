@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import {connection}  from  '../config/db';
-import { SurveysRepository } from '../repositories/SurveysRepository';
+import { connection }  from  '../../config/db';
+import { SurveysRepository } from '../../repositories/SurveysRepository';
 
 class SurveysController {
 
@@ -12,7 +12,6 @@ class SurveysController {
     const survey = surveysRepository.create({ title, description });
 
     await surveysRepository.save(survey);
-
     return response.status(201).json(survey);
   }
 

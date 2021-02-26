@@ -8,13 +8,13 @@ pipeline {
 
     agent any
     stages {
-            stage('[GitClone] Preparando a bagagem') {
+            stage('[GitClone] Preparando a bagagem.') {
                 steps {
                     git url: 'https://github.com/FranciscoWallison/nlw-04-nodejs.git'
                 }
             }
 
-            stage('[BuildDockerCompose] Revisando os motores') {
+            stage('[BuildDockerCompose] Revisando os motores.') {
                 steps {
                     sh (
                         script: 'docker-compose -f "docker-compose.yml" down',
@@ -23,7 +23,7 @@ pipeline {
                 }
             }
 
-            stage('[BuildDockerCompose] Embarcando') {
+            stage('[BuildDockerCompose] Embarcando os Astronautas.') {
                 steps {
                     sh (
                         script: "docker-compose up -d",
@@ -32,7 +32,7 @@ pipeline {
                 }
             }
 
-            stage('[NpmInstall] Apertando os cintos') {
+            stage('[NpmInstall] Apertando os cintos.') {
                 steps {
                     sh (
                         script: 'docker exec -it nlw-04-nodejs npm install',
@@ -41,7 +41,7 @@ pipeline {
                 }
             }
 
-            stage('[RunMigrations] Ligando os motores') {
+            stage('[RunMigrations] Ligando os motores.') {
                 steps {
                     sh (
                         script: 'docker exec -it nlw-04-nodejs yarn typeorm migration:run',
@@ -50,7 +50,7 @@ pipeline {
                 }
             }
 
-            stage('[YarnTest] Contagem Regreciva') {
+            stage('[YarnTest] Contagem Regressiva.') {
                 steps {
                     sh (
                         script: 'docker exec -it nlw-04-nodejs yarn test',

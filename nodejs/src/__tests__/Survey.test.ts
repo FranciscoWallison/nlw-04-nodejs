@@ -15,7 +15,8 @@ describe('Surveys', () => {
   });
 
   it('Should be able to create a new survey', async () => {
-    const response = await request(app).post('/surveys').send({
+    
+    const response = await request(app).post('/api/surveys').send({
       title: 'Title Example',
       description: 'Description Example',
     });
@@ -25,12 +26,12 @@ describe('Surveys', () => {
   });
 
   it('Should be able to get all surveys', async () => {
-    await request(app).post('/surveys').send({
+    await request(app).post('/api/surveys').send({
       title: 'Title Example 2',
       description: 'Description Example 2',
     });
 
-    const response = await request(app).get('/surveys');
+    const response = await request(app).get('/api/surveys');
 
     expect(response.body.length).toBe(2);
   });

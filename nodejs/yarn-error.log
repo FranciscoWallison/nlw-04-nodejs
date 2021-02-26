@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /opt/yarn-v1.22.5/bin/yarn.js dev-mr
+  /usr/local/bin/node /opt/yarn-v1.22.5/bin/yarn.js typeorm-mc CreateSurveysUsers
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /src/app/package.json: Unexpected token } in JSON at position 632
+  SyntaxError: /src/app/package.json: Unexpected token   in JSON at position 535
       at JSON.parse (<anonymous>)
       at /opt/yarn-v1.22.5/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -32,9 +32,10 @@ npm manifest:
     "scripts": {
       "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
       "dev-mr": "yarn typeorm migration:run -c \"$CONNECTION_DRIVE\" && ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts ",
+      "typeorm-mc": "yarn typeorm migration:create -c \"$CONNECTION_DRIVE\ -n",
       "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-      "test": "NODE_ENV=test jest",
-      "posttest": "yarn typeorm schema:drop -c \"$CONNECTION_DRIVE\"_test ",
+      "test": "NODE_ENV=test jest --detectOpenHandles",
+      "posttest": "yarn typeorm schema:drop -c \"$CONNECTION_DRIVE\"_test"
     },
     "dependencies": {
       "dotenv": "^8.2.0",
