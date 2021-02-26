@@ -1,4 +1,4 @@
-# [NLW#4] Start Project Docker, Dokcer-Compose, Jenkis, DockerHub, NodeJs, Sqlit, Mysql e Porstgres
+# [NLW#4] Start Project NodeJs e ...Docker, Dokcer-Compose, Jenkis, DockerHub, Sqlit, Mysql, Porstgres e CI/CD
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
