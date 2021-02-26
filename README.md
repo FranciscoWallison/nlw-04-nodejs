@@ -38,8 +38,8 @@
 *  -[:artificial_satellite: Pipeline Jenkis](#pipeline)
 *  -[:white_check_mark: Testing sqlite, mysql e postgres](#testing-sqlite-mysql-e-postgres)
 *  -[:shopping_cart: Deliveri](#repo)
-* [🦸 Autor](#🦸-Autor)
-* [📝 Licença](#📝-Licença)
+* [🦸 Observações e dicas para esta utilizando projeto.](#obs)
+
   
   
  ## 📋 Sobre o projeto
