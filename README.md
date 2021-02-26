@@ -33,13 +33,13 @@
 
 
 * [📋 Sobre](#-sobre-o-projeto)
-* [🖥 Milha Extra:](#🖥-Milha-Extr)
+* [🚀 Milha Extra:](#-milha-extra)
 * [🏋️‍♀️ Como contribuir para o projeto](#🏋️‍♀️-Como-contribuir-para-o-projeto)
 * [🦸 Autor](#🦸-Autor)
 * [📝 Licença](#📝-Licença)
   
   
- ## 💻 Sobre o projeto
+ ## 📋 Sobre o projeto
 
 O <strong>NPS-API</strong> é uma API Restful para Net Promoter Score.
 
