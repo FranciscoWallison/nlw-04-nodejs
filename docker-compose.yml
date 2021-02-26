@@ -18,7 +18,7 @@ services:
     working_dir: /src/app
     environment:
       # ESCOLHA O SEU DRIVE ENTRE sqlite, mysql E postgres
-      - CONNECTION_DRIVE=mysql
+      - CONNECTION_DRIVE=sqlite
       # CONFIGURAÇÕES MIGRATIONS
       - TYPEORM_LOGGING=true
       - TYPEORM_ENTITIES=./src/models/*.ts

@@ -7,9 +7,7 @@ import {connection}  from  '../config/db';
 describe('Surveys', () => {
   beforeAll(async () => {
     const cn = await connection;
-    if(!await cn.showMigrations()){
-        await cn.dropDatabase();       
-    }
+    await cn.dropDatabase();       
     await cn.runMigrations({
         transaction: "all"
     });
