@@ -1,4 +1,4 @@
-# [NLW#4] Start Project Docker
+# [NLW#4] Start Project Docker, Dokcer-Compose, Jenkis, NodeJs, Sqlit, Mysql e Porstgres
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
