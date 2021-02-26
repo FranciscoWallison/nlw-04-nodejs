@@ -11,7 +11,7 @@ export class CreateUsers1614047185305 implements MigrationInterface {
             isPrimary: true,
             type: "varchar",    
             generationStrategy: 'uuid',
-            default: 'uuid_generate_v4()',
+            default:  process.env.CONNECTION_DRIVE === 'mysql' ? `(UUID_TO_BIN(UUID(), TRUE))` : 'uuid_generate_v4()',
           },
           {
             name: 'name',

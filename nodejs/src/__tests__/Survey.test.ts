@@ -35,5 +35,8 @@ describe('Surveys', () => {
     expect(response.body.length).toBe(2);
   });
 
- 
+  afterAll(async () => {
+    const cn = await connection;
+    await cn.dropDatabase();
+  });
 });

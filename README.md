@@ -6,6 +6,7 @@
 #### 3 O comando ["yarn dev-mr"](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) desse projeto lhe ajudará a startar o projeto já com as migrações.
 #### 4 Para estár adicionando UUID no mysql vejá documentação, vejá exemplo utilizando nesse projeto [aqui](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/src/database/migrations/1614094730404-CreateUsers.ts#L15).
 #### Referencia utilizada para criar webhook com jenkins e github [aqui](https://medium.com/@naistangz/building-a-ci-cd-pipeline-for-a-node-js-app-with-docker-and-jenkins-ee6db6e70d25).
+#### Possiveis erros e suas soluções [aqui]
 
 _______
 ## Comandos básicos Docker e DOCKER-COMPOSE
@@ -49,3 +50,8 @@ _______
 ## Comandos básicos jenkins
 #### Primeiro acesso
 - cat /var/jenkins_home/secrets/initialAdminPassword
+
+# Erros
+## Table 'database_nlw_test.surveys' doesn't exist
+#### Solução 
+    - yarn typeorm schema:drop -c "$CONNECTION_DRIVE"_test

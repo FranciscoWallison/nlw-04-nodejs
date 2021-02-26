@@ -10,7 +10,7 @@
     "dev-mr": "yarn typeorm migration:run -c \"$CONNECTION_DRIVE\" && ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts ",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "test": "NODE_ENV=test jest --detectOpenHandles",
-    "posttest": "yarn typeorm schema:drop -c \"$CONNECTION_DRIVE\"_test "
+    "posttest": "yarn typeorm schema:drop -c \"$CONNECTION_DRIVE\"_test"
   },
   "dependencies": {
     "dotenv": "^8.2.0",

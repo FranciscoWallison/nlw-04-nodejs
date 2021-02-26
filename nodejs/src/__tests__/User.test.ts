@@ -30,5 +30,9 @@ describe('Users', () => {
 
     expect(response.status).toBe(400);
   });
-  
+
+  afterAll(async () => {
+    const cn = await connection;
+    await cn.dropDatabase();
+  });
 });
