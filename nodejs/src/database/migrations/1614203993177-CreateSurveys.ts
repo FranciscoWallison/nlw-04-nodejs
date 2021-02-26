@@ -10,7 +10,7 @@ export class CreateSurveys1614203993177 implements MigrationInterface {
           {
             name: 'id',
             isPrimary: true,
-            type: process.env.CONNECTION_DRIVE === 'mysql' ? "binary" : 'uuid',       
+            type: process.env.CONNECTION_DRIVE === 'mysql' ? "varchar" : 'uuid',       
             default:  process.env.CONNECTION_DRIVE === 'mysql' ? `(UUID_TO_BIN(UUID(), TRUE))` : "NULL",
           },
           {
