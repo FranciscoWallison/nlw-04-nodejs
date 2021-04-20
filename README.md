@@ -1,4 +1,4 @@
-# [NLW#4] Start Project NodeJs e ...Docker, Dokcer-Compose, Jenkis, DockerHub, Sqlit, Mysql, Porstgres, Testing e CI/CD
+# [NLW#4] Start Project NodeJs e ...Docker, Docker-Compose, Jenkis, DockerHub, Sqlit, Mysql, Porstgres, Testing e CI/CD
 
 [![Wallpaper-1920c1080.png](https://i.postimg.cc/257MFQX8/Wallpaper-1920c1080.png)](https://postimg.cc/SXjgmMhw)
 
