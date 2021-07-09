@@ -121,7 +121,7 @@ _______
 
 # Testing continuous integration
 ## Comandos básicos jenkins
-#### Primeiro acesso
+#### Primeiro acesso Senha
 - cat /var/jenkins_home/secrets/initialAdminPassword
 
 # Erros
