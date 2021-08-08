@@ -85,7 +85,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 [Link DockerHub](https://hub.docker.com/repository/docker/chicowall/nlw-04-nodejs/)
 ![deliveri](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/ltimoDelivere.png) 
 
-## OBS: 
+## OBS: COMANDOS RAPIDOS E ACESSIBILIDADE 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
 #### 2 Para estar selecionando os [DRIVES](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/docker-compose.yml#L21).
 #### 3 O comando [yarn dev-mr](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/main/nodejs/package.json#L10) ajudará a startar o projeto com as migrações.
